@@ -6,7 +6,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       counter: 10,
-      users: [{name: 'init'}]
+      users: [{name: 'init', id: 1999}]
     },
     mutations: {
       increment (state) {

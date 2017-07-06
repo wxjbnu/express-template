@@ -2,15 +2,16 @@
   <section class="container">
     <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" >
     <h1 class="title">
-      {{title}} USERS {{this.$store.state.counter}}
+       USERS counter:{{$store.state.counter}}
     </h1>
     <ul class="users">
       <li v-for="(user, index) in $store.state.users" class="user" :key="index">
         <nuxt-link :to="{ name: 'id', params: { id: index }}">
-          {{ user.name }}
+          {{user.name}}
         </nuxt-link>
       </li>
     </ul>
+    <a href="javascript:void(0)" @click="add">add</a><br>
     <a href="javascript:void(0)" @click="show">show</a>
   </section>
 </template>
@@ -20,15 +21,16 @@ import axios from '~plugins/axios'
 
 export default {
   data () {
-    console.log(this.$store)
+    // console.log(this.$store)
     return {
       title: 'Hello World!',
       users: [{name: 'www'}]
     }
   },
   async asyncData (context) {
-    console.log(context)
+    // console.log(context)
     let { data } = await axios.get('/api/users')
+    // store.commit('setUsers', data)
     return {
       users: data
     }
@@ -48,6 +50,9 @@ export default {
   methods: {
     show () {
       alert(123)
+    },
+    add () {
+      this.$store.commit('increment')
     }
   }
 

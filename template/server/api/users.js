@@ -10,7 +10,10 @@ const users = [
 
 /* GET users listing. */
 router.get('/users', function (req, res, next) {
-  res.json(users)
+  setTimeout(()=>{
+    res.json(users)
+  },1)
+  
 })
 
 /* GET user by ID. */

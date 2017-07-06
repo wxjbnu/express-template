@@ -1,6 +1,6 @@
-# {{ name }}
+# enuxt
 
-> {{ description }}
+> Nuxt.js project
 
 ## Build Setup
 

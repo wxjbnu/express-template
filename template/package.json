@@ -1,8 +1,8 @@
 {
-  "name": "{{ name }}",
+  "name": "enuxt",
   "version": "1.0.0",
-  "description": "{{ description }}",
-  "author": "{{ author }}",
+  "description": "Nuxt.js project",
+  "author": "wxj",
   "private": true,
   "scripts": {
     "dev": "backpack dev",
